@@ -1,40 +1,37 @@
 
 public class Student {
-	private String id;
+	private int id;
 	private String name;
 	private int m1,m2,m3;
 	static int count;
+
 	
 	static {
 		count = 0;
 	}
-	
+	/*
 	private String generateID() {
 		
 		return name.substring(0,1)+count;			
 	}
+	*/
 	public Student() {
-		count++;
-		id = "";
-		name = "User";
-		m1=0;
-		m2=0;
-		m3=0;
+		this(0,null,0,0,0);
 		
 	}
 	
-	public Student(String name, int m1,int m2,int m3) {
+	public Student(int id,String name, int m1,int m2,int m3) {
 		if(name != null) {
 			this.name = name;
 		}
-			this.id = generateID();
+			this.id = id;
 			this.m1=m1;
 			this.m2=m2;
 			this.m3=m3;
 			count++;
 	}
 	
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 	
