@@ -1,8 +1,8 @@
 import java.time.LocalDate;
 
 public class SalariedEmp extends Employee {
-	private int salary;
-	private int bonus;
+	private double salary;
+	private double bonus;
 	
 	
 	public SalariedEmp() {
@@ -10,7 +10,7 @@ public class SalariedEmp extends Employee {
 	}
 	
 	
-	public SalariedEmp(int pid, String pname, String pmob, String pemail,String dept, String designation, LocalDate dateOfJoining,int salary, int bonus) {
+	public SalariedEmp(int pid, String pname, String pmob, String pemail,String dept, String designation, LocalDate dateOfJoining,double salary, double bonus) {
 		super(pid,pname,pmob,pemail,dept,designation,dateOfJoining);
 		this.salary = salary;
 		this.bonus = bonus;
@@ -19,21 +19,25 @@ public class SalariedEmp extends Employee {
 
 	@Override
 	public String toString() {
-		return "SalariedEmp [salary=" + salary + ", bonus=" + bonus + "]";
+		return super.toString()+"SalariedEmp [salary=" + salary + ", bonus=" + bonus + "]";
 	}
 
 
-	public int getSalary() {
+	public double getSalary() {
 		return salary;
 	}
-	public void setSalary(int salary) {
+	public void setSalary(double salary) {
 		this.salary = salary;
 	}
-	public int getBonus() {
+	public double getBonus() {
 		return bonus;
 	}
 	public void setBonus(int bonus) {
 		this.bonus = bonus;
+	}
+	
+	public double calculateSalary() {
+		return salary + 0.10 * salary + 0.15 * salary - 0.08 * salary + bonus;
 	}
 	
 }

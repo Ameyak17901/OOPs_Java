@@ -1,18 +1,17 @@
 import java.time.LocalDate;
 
-public class Employee extends Person {
+abstract public class Employee extends Person {
 	private String dept;
 	private String designation;
 	private LocalDate DateOfJoining;
 	public Employee() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Employee(int pid, String pname, String pmob, String pemail,String dept, String designation, LocalDate dateOfJoining) {
 		super(pid,pname,pmob,pemail);
 		this.dept = dept;
 		this.designation = designation;
-		DateOfJoining = dateOfJoining;
+		this.DateOfJoining = dateOfJoining;
 	}
 	public String getDept() {
 		return dept;
@@ -34,9 +33,12 @@ public class Employee extends Person {
 	}
 	@Override
 	public String toString() {
-		return "Employee [dept=" + dept + ", designation=" + designation + ", DateOfJoining=" + DateOfJoining + "]";
+		return super.toString()+"Employee [dept=" + dept + ", designation=" + designation + ", DateOfJoining=" + DateOfJoining + "]";
 	}
 	
+	public double calculateSalary() {
+		return 0;
+	};
 	
 	
 	

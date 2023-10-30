@@ -25,7 +25,11 @@ public class ContractWorker extends Employee {
 	}
 	@Override
 	public String toString() {
-		return "ContractWorker [hrs=" + hrs + ", charges=" + charges + "]";
+		return super.toString()+"ContractWorker [hrs=" + hrs + ", charges=" + charges + "]";
+	}
+	
+	public double calculateSalary() {
+		return hrs * charges;
 	}
 	
 	
